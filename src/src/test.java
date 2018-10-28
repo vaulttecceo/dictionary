@@ -3,5 +3,8 @@ public class test {
         System.out.print("hi john ");
         System.out.println("hi erik");
         //nice
+
     }
+
+
 }
