@@ -7,8 +7,8 @@ import java.util.Map;
 
 public class test {
     static char[] buff = new char[3];
-    String key, value;
-   static boolean onKey = true;
+    static String key, value;
+    static boolean onKey = true;
     static int i = 0;
 
     public static void main(String[] args) throws IOException {
@@ -24,17 +24,17 @@ public class test {
     public static void lookingAtFile(File f) throws IOException {
         Scanner in = new Scanner(f);
         while(in.hasNext()){
-               if(onKey){
-                   buff[0] = buff[1];
-                   buff[1] = buff[2];
-                   buff[2] = in.next().charAt(i);
-               }
                if(buff.equals("\";\"") && onKey==false){
                    onKey = true;
+                   value += String.valueOf(buff);
                }
                if(buff.equals("\",\"") && onKey){
                    onKey = false;
+                   key += String.valueOf(buff);
                }
+               buff[0] = buff[1];
+               buff[1] = buff[2];
+               buff[2] = in.next().charAt(i);
        }
 
     }
