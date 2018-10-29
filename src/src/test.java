@@ -9,10 +9,15 @@ public class test {
     static char[] buff = new char[3];
     String key, value;
    static boolean onKey = true;
+    static int i = 0;
 
     public static void main(String[] args) throws IOException {
         File file = new File("/Users/johnmcguinness/Desktop/JavaPrograms/dictwitherik/src/src/source.txt");
-        for(int i = 0; 0 < file.length(); i++){
+        Scanner start = new Scanner(file);
+        buff[0] = start.next().charAt(2);
+        buff[1] = start.next().charAt(3);
+        buff[2] = start.next().charAt(4);
+        for(; 0 < file.length(); i++){
             lookingAtFile(file);
         }
     }
@@ -20,16 +25,16 @@ public class test {
         Scanner in = new Scanner(f);
         while(in.hasNext()){
                if(onKey){
-                  buff[] = in.next().charAt(j);
-
+                   buff[0] = buff[1];
+                   buff[1] = buff[2];
+                   buff[2] = in.next().charAt(i);
                }
                if(buff.equals("\";\"") && onKey==false){
                    onKey = true;
                }
                if(buff.equals("\",\"") && onKey){
                    onKey = false;
-           }
-
+               }
        }
 
     }
