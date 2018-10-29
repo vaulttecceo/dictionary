@@ -14,13 +14,11 @@ public class test {
         File file = new File("/Users/johnmcguinness/Desktop/JavaPrograms/dictwitherik/src/src/source.txt");
         for(int i = 0; 0 < file.length(); i++){
             lookingAtFile(file);
-
         }
     }
     public static void lookingAtFile(File f) throws IOException {
         Scanner in = new Scanner(f);
         while(in.hasNext()){
-           for(int j = 0; j < f.length(); j++){
                if(onKey){
                   buff[] = in.next().charAt(j);
 
@@ -30,7 +28,6 @@ public class test {
                }
                if(buff.equals("\",\"") && onKey){
                    onKey = false;
-               }
            }
 
        }
