@@ -39,7 +39,7 @@ public class test {
                buff[1] = buff[2];
                buff[2] = in.next().charAt(i);
        }
-
+//            https://docs.google.com/document/d/12j9RDOletLUL42Sn_BffExvSUenzcRN2_LlqooTqYg8/edit?usp=sharing
     }
 
 }
