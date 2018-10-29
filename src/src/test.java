@@ -17,8 +17,11 @@ public class test {
         buff[0] = start.next().charAt(2);
         buff[1] = start.next().charAt(3);
         buff[2] = start.next().charAt(4);
+        key = ""+ buff[0] + buff[1];
+
         for(; 0 < file.length(); i++){
             lookingAtFile(file);
+            //add key and value into map here?? Does it work?
         }
     }
     public static void lookingAtFile(File f) throws IOException {
@@ -26,11 +29,11 @@ public class test {
         while(in.hasNext()){
                if(buff.equals("\";\"") && onKey==false){
                    onKey = true;
-                   value += String.valueOf(buff);
+                   value += buff[3];
                }
                if(buff.equals("\",\"") && onKey){
                    onKey = false;
-                   key += String.valueOf(buff);
+                   key += buff[3];
                }
                buff[0] = buff[1];
                buff[1] = buff[2];
