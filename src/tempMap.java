@@ -8,18 +8,16 @@ public class tempMap implements Map {
     }
 
 
-    @Override
-    public String getKey() {
 
+    public String getKey() {
         return null;
     }
 
-    @Override
     public String getValue() {
         return null;
     }
 
-    int size(){
+    public int size(){
         return map.size();
     }
 
@@ -35,8 +33,8 @@ public class tempMap implements Map {
         return false;
     }
 
-    public Object get(String key) {
-        if(map.contains(myEntry)
+    public Object get(Object key) {
+        if(map.contains(key))
           return map.get(map.indexOf(key));
         return null;
     }
