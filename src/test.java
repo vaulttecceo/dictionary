@@ -5,69 +5,27 @@ import java.util.Stack;
 
 
 public class test {
-    public tempMap map;
-    static Stack s;
+
+    tempMap map = new tempMap();
+    char buf[] = new char[3];
 
     public static void main(String[] args) throws IOException {
         File file = new File("C:\\Users\\Guadalupe\\IdeaProjects\\dictionary\\src\\src\\source.txt");
-        s = new Stack(); //fill this bitch with chars
-        stackFiller(s, file);
+        Stack s = new Stack<String>(); //fill s with each character from the file in sequential order
         mapGenerator(s);
-    }
-
-
-    public static void mapGenerator(Stack<String> stack) {
-        String buf[] = new String[3];
-        buf[0] = "\"";
-        buf[1] = ",";
-        buf[2] = "\"";
-        String key = "", value = "";
-        boolean onKey = true;
-        tempMap map = new tempMap();
-        int x = 0;
-
-        for (String c : stack) {
-            buf[x++] = c;
-            if (x ==3 )
-                x=0;
-            if (onKey)
-                key = key.concat(c);
-
-            else
-                value = value.concat(c);
-
-            if (buf[0].equals("\"") && buf[1].equals(":") && buf[2].equals("\""))
-                onKey = !onKey;
-            else if (buf[0].equals("\"") && buf[1].equals(",") && buf[2].equals("\"")) {
-                map.put(key, value);
-                key = "";
-                value = "";
-            }
         }
 
-    }
 
-    public static void stackFiller(Stack s, File f) {
+    public static void mapGenerator(Stack<String> stack){
+        String key, value;
+        boolean onKey = true;
 
+        for(String c : stack)
+            // do stuff here
+            
     }
 }
-    /*in:
-        s: stack to be
-        f: file to be accessed and drawn from
-      out:
-        none
-
-
-
-    public static boolean checkSeperators(String[] a){
-            if ((a[0].equals("\"") && a[1].equals(",") && a[2].equals("\"")) //buf is ","
-            || (a[0].equals("\"") && a[1].equals(":") && a[2].equals("\""))) //buf is ":"
-            return true;
-        return false;
-    }
-
-}
-    public static void lookingAtFile(File f) throws IOException {
+  /*public static void lookingAtFile(File f) throws IOException {
         Scanner in = new Scanner(f);
         while(in.hasNext()){
                if(buff.equals("\";\"") && onKey==false){
